@@ -28,28 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             applyBionicReading(body);
         }
     });
-
-    // Tab functionality
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove 'active' class from all links and sections
-            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
-            
-            // Add 'active' class to the clicked link
-            this.classList.add('active');
-            
-            // Add 'active' class to the corresponding section
-            const targetSection = document.querySelector(this.getAttribute('href'));
-            targetSection.classList.add('active');
-        });
-    });
-
-    // Set default active section
-    const defaultSection = document.querySelector('nav a.active').getAttribute('href');
-    document.querySelector(defaultSection).classList.add('active');
 });
 
 function applyBionicReading(element) {
